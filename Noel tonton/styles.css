@@ -1,0 +1,101 @@
+/* Style général */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: url('hyperespace.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1, h2 {
+    color: #feda4a;
+    text-shadow: 2px 2px 5px black; /* Pour améliorer la lisibilité */
+}
+
+
+button {
+    font-size: 1rem;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Timer */
+#timer {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Boîte de question */
+#question-box {
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    transition: opacity 0.5s, transform 0.5s;
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+#question-box.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#options-container button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+/* Résultats */
+#results-box {
+    text-align: center;
+}
+
+/* Animation classique des vaisseaux */
+.ship-container {
+    position: fixed;
+    left: -150px;
+    z-index: 1000;
+    animation: fly-across 4s linear infinite;
+}
+
+.ship {
+    width: 100px;
+    height: auto;
+    filter: drop-shadow(0 0 10px white);
+}
+
+@keyframes fly-across {
+    from {
+        transform: translateY(var(--start-y));
+    }
+    to {
+        left: 110%;
+        transform: translateY(var(--start-y));
+    }
+}
